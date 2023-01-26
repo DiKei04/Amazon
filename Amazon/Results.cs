@@ -43,15 +43,7 @@ namespace Amazon
                             Console.WriteLine(xPath += " and .//ancestor::div[@class='a-section a-spacing-small a-spacing-top-small' and" +
                                 " .//span[not(contains(text(), 'FREE Shipping'))]]]");
                         break;
-                }
-                //for(int i = 1; i < items.Count; i++)
-                //{
-                //    list[i].title = items[i].Text;
-                //    list[i].link = items[i].Text;
-                //    list[i].price = items[i].Text;
-                //    list[i].shipping = items[i].Text;
-                //}
-                
+                }  
 
             }
 
