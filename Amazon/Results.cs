@@ -28,20 +28,20 @@ namespace Amazon
                 switch (filter.Key)
                 {
                     case "price_lower_then":
-                        Console.WriteLine(xPath +=$" and concat(descendant::span[@class = 'a-price-whole']," +
-                            $"descendant::span[@class ='a-price-fraction']) < {filter.Value}");
+                        xPath +=$" and concat(descendant::span[@class = 'a-price-whole']," +
+                            $"descendant::span[@class ='a-price-fraction']) < {filter.Value}";
                         break;
                     case "price_higher_or_equal_then":
-                        Console.WriteLine(xPath += $"and concat(descendant::span[@class = 'a-price-whole']," +
-                            $"descendant::span[@class ='a-price-fraction']) >= {filter.Value} ");
+                        xPath += $"and concat(descendant::span[@class = 'a-price-whole']," +
+                            $"descendant::span[@class ='a-price-fraction']) >= {filter.Value} ";
                         break;
                     case "free_shipping":
                         if(filter.Value == "true")
-                            Console.WriteLine(xPath += " and .//ancestor::div[@class='a-section a-spacing-small a-spacing-top-small' and" +
-                                " .//span[contains(text(), 'FREE Shipping')]]] ");
+                            xPath += " and .//ancestor::div[@class='a-section a-spacing-small a-spacing-top-small' and" +
+                                " .//span[contains(text(), 'FREE Shipping')]]] ";
                         else
-                            Console.WriteLine(xPath += " and .//ancestor::div[@class='a-section a-spacing-small a-spacing-top-small' and" +
-                                " .//span[not(contains(text(), 'FREE Shipping'))]]]");
+                            xPath += " and .//ancestor::div[@class='a-section a-spacing-small a-spacing-top-small' and" +
+                                " .//span[not(contains(text(), 'FREE Shipping'))]]]";
                         break;
                 }  
 

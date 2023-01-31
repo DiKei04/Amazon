@@ -9,7 +9,7 @@ namespace Amazon
     {
         
         IWebDriver chrome;
-       // IWebDriver ie;
+      //IWebDriver ie;
 
 
         [SetUp]
@@ -17,10 +17,10 @@ namespace Amazon
         {
             BrowserFactory browserFactory = new BrowserFactory();
             browserFactory.InitBrowser("chrome");
-         //   browserFactory.InitBrowser("ie");
+         // browserFactory.InitBrowser("ie");
 
             chrome = browserFactory.Driver["CHROME"];
-         //   ie = browserFactory.Driver["IE"];
+         // ie = browserFactory.Driver["IE"];
 
             
         }
@@ -29,7 +29,6 @@ namespace Amazon
         public void Test1()
         {
             Amazon amazon = new Amazon(chrome);
-            chrome.Navigate().GoToUrl("https://www.amazon.com/");
             amazon.Pages.Home.Searchbar.Text = "mouse";
             amazon.Pages.Home.Searchbar.Click();
             amazon.Pages.Results.GetResultsBy(new Dictionary<string, string>

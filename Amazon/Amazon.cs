@@ -19,6 +19,7 @@ namespace Amazon
         public Amazon (IWebDriver driver)
         {
         this.driver = driver;
+        driver.Navigate().GoToUrl("https://www.amazon.com/");
         }
 
         public Pages Pages
